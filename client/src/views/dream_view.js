@@ -17,9 +17,6 @@ DreamView.prototype.render = function (dream) {
   const achievedBy = this.createCustomElement('p', "Dream Deadline", dream.achievedBy);
   dreamContainer.appendChild(achievedBy);
 
-  const completedButton = this.createCompletedButton(dream._id);
-  dreamContainer.appendChild(completedButton);
-
   const deleteButton = this.createDeleteButton(dream._id);
   dreamContainer.appendChild(deleteButton);
 
@@ -44,17 +41,17 @@ DreamView.prototype.createDeleteButton = function (dreamID) {
   return button;
 
 };
-
-DreamView.prototype.createCompletedButton = function (dreamID) {
-  const button = document.createElement("button");
-  button.classList.add("completed-button");
-  button.value = dreamID;
-  button.setAttribute("onclick", "this.detach().appendTo()")
-  button.addEventListener('click', (event) => {
-    PubSub.publish('DreamView:dream-completed', event.target.value);
-  })
-  return button;
-};
+// 
+// DreamView.prototype.createCompletedButton = function (dreamID) {
+//   const button = document.createElement("button");
+//   button.classList.add("completed-button");
+//   button.value = dreamID;
+//   button.setAttribute("onclick", "this.detach().appendTo()")
+//   button.addEventListener('click', (event) => {
+//     PubSub.publish('DreamView:dream-completed', event.target.value);
+//   })
+//   return button;
+// };
 
 
 

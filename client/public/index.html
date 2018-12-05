@@ -21,23 +21,25 @@
         <div class="bucket-list-form-view">
           <form id="dreams-form">
             <div>
-              <label for="name">Name:</label>
+              <label for="name">Name:</label> <br>
               <input type="text" id="name" placeholder="Make a wish..." onclick=""/>
             </div>
             <div>
-              <label for="description">Description:</label>
+              <label for="description">Description:</label> <br>
               <textarea name="description" rows="8" cols="80" placeholder="Follow your dreams..." onclick=""></textarea>
             </div>
             <div>
-              <label for="achievedBy">Achieved By:</label>
+              <label for="achievedBy">Achieved By:</label> <br>
               <input type="date" name="achievedBy" id="achieved-by">
             </div>
+            <br>
             <input type="submit" value="Make your dream come true" id="save"/>
           </form>
         </div>
 
         <div class="dreams-entry-container">
-          <h2>Bucket List Entries</h2>
+          <h2 id="title">Bucket List Entries</h2>
+          <p id="quote">"There are no buckets in heaven."</p>
           <div id="dreams">
 
           </div>

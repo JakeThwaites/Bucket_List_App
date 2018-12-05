@@ -1,6 +1,7 @@
 body {
   font-family: 'Courgette', cursive;
   background-color: #33D4FF;
+  align-items: center;
 }
 
 .delete-button {
@@ -28,6 +29,22 @@ body {
 	right: 0;
 	top: 0;
 	z-index: -1;
+}
+
+.dreams-entry-container {
+  text-align: center;
+}
+
+.bucket-list-form-view {
+  align-items: center;
+  text-align: center;
+}
+
+#dreams {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* KEYFRAMES */
