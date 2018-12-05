@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dreamsGridView = new DreamGridView(dreamsContainer);
   dreamsGridView.bindEvents();
 
+
   const dreams = new Dreams();
   dreams.bindEvents();
   dreams.getData();

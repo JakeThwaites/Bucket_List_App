@@ -23,4 +23,11 @@ RequestHelper.prototype.post = function (payload) {
   .then((response) => response.json());
 };
 
+RequestHelper.prototype.put = function (id) {
+  return fetch(`${this.url}/${id}`, {
+    method: 'PUT',
+    
+  })
+}
+
 module.exports = RequestHelper;
