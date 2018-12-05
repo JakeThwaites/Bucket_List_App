@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bucket List</title>
+    <script src="js/bundle.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+      <div class="main-container">
+        <div class="header-container">
+
+        </div>
+
+        <div class="bucket-list-form-view">
+          <form id="bucket-list-form">
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name"/>
+            </div>
+            <div>
+              <label for="description">Description:</label>
+              <textarea name="description" rows="8" cols="80"></textarea>
+            </div>
+            <div>
+              <label for="achieved-by">Achieved By:</label>
+              <input type="date" id="achieved-by">
+            </div>
+            <input type="submit" value="Save" id="save"/>
+          </form>
+        </div>
+
+        <div class="bucket-list-entry-container">
+          <h2>Bucket List Entries</h2>
+          <div id="bucket-list-entries">
+
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>
