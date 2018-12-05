@@ -1,23 +1,23 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-const BucketListFormView = function (form) {
+const DreamFormView = function (form) {
   this.form = form;
 };
 
-BucketListFormView.prototype.bindEvents = function () {
+DreamFormView.prototype.bindEvents = function () {
   this.form.addEventListener("submit", (event) => {
     this.handleSubmit(event);
   });
 };
 
-BucketListFormView.prototype.handleSubmit= function (event) {
+DreamFormView.prototype.handleSubmit= function (event) {
   event.preventDefault();
   const newDream = this.createDream(event.target);
-  PubSub.publish("BucketListFormView:dream-submitted", newDream);
+  PubSub.publish("DreamFormView:dream-submitted", newDream);
   event.target.reset();
 };
 
-BucketListFormView.prototype.createDream = function (form) {
+DreamFormView.prototype.createDream = function (form) {
   const newDream = {
     name: form.name.value,
     description: form.description.value,
@@ -28,4 +28,4 @@ BucketListFormView.prototype.createDream = function (form) {
 };
 
 
-module.exports = BucketListFormView;
+module.exports = DreamFormView;
