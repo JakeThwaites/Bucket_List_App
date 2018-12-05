@@ -10,6 +10,10 @@ Dreams.prototype.bindEvents = function () {
   PubSub.subscribe("DreamFormView:dream-submitted", (event) => {
     this.postDream(event.detail);
   });
+
+  PubSub.subscribe("DreamView:dream-delete-clicked", (event) => {
+    this.deleteDream(event.detail);
+  });
 };
 
 Dreams.prototype.getData = function () {
@@ -22,6 +26,14 @@ Dreams.prototype.getData = function () {
 
 Dreams.prototype.postDream = function (dream) {
   this.request.post(dream)
+  .then((dreams) => {
+    PubSub.publish("Dreams:data-loaded", dreams);
+  })
+  .catch(console.error);
+};
+
+Dreams.prototype.deleteDream = function (dreamID) {
+  this.request.delete(dreamID)
   .then((dreams) => {
     PubSub.publish("Dreams:data-loaded", dreams);
   })
