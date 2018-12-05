@@ -34,14 +34,16 @@ DreamView.prototype.createDeleteButton = function (dreamID) {
   const button = document.createElement("button");
   button.classList.add("delete-button");
   button.value = dreamID;
-  button.setAttribute('onclick', "confirm('Are you sure you want to give up on your dream?')");
   button.addEventListener('click', (event) => {
-    PubSub.publish('DreamView:dream-delete-clicked', event.target.value);
+    var didUserAgree = confirm("Are you sure you want to give up on your dream?");
+    if (didUserAgree == true) {
+      PubSub.publish('DreamView:dream-delete-clicked', event.target.value);
+    }
   });
   return button;
 
 };
-// 
+//
 // DreamView.prototype.createCompletedButton = function (dreamID) {
 //   const button = document.createElement("button");
 //   button.classList.add("completed-button");
