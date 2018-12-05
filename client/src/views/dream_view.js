@@ -43,17 +43,7 @@ DreamView.prototype.createDeleteButton = function (dreamID) {
   return button;
 
 };
-//
-// DreamView.prototype.createCompletedButton = function (dreamID) {
-//   const button = document.createElement("button");
-//   button.classList.add("completed-button");
-//   button.value = dreamID;
-//   button.setAttribute("onclick", "this.detach().appendTo()")
-//   button.addEventListener('click', (event) => {
-//     PubSub.publish('DreamView:dream-completed', event.target.value);
-//   })
-//   return button;
-// };
+
 
 
 
