@@ -13,16 +13,15 @@ Dreams.prototype.bindEvents = function () {
 };
 
 Dreams.prototype.getData = function () {
-  this.request.get(
+  this.request.get()
     .then((dreams) => {
       PubSub.publish("Dreams:data-loaded", dreams);
     })
     .catch(console.error);
-  );
 };
 
 Dreams.prototype.postDream = function (dream) {
-  this.request.post(dream);
+  this.request.post(dream)
   .then((dreams) => {
     PubSub.publish("Dreams:data-loaded", dreams);
   })
