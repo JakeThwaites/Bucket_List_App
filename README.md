@@ -1,6 +1,6 @@
 # week_08_day_3_lab__bucket_list
 
-
+To run the app:
 
 npm init
 
